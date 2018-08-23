@@ -77,6 +77,7 @@ Article.prototype.updateRecord = function(callback) {
     url: `/articles/${this.article_id}`,
     method: 'PUT',
     data: {
+      article_id: this.article_id,
       author: this.author,
       author_url: this.author_url,
       body: this.body,
