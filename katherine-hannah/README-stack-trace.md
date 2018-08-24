@@ -16,6 +16,8 @@
 
 - *No other functions run after this point that make server calls, including functions called by user actions.*
 
+![Stack Trace - Home](index.jpg "Stack Trace - Home")
+
 ## Stack Trace - New Article
 
 1. After loading jQuery and other external resources, and hoisting functions/variables/etc, articleView.initNewArticlePage() is called in new.html.
@@ -27,3 +29,5 @@
 3. (event handler) articleView.submit is called on form submit. This makes a server call: Client creates new object article that stores current field data > Client makes a post request to server at /articles, sends article object > Server queries database with SQL statement INSERT INTO articles... [article object data] > If success, server sends 'insert complete' as response to client; if fail, server sends 500 error as response to client > Client console logs response.
 
 - *Additional functions exist that make other kinds of calls to the server, but they are not called in the flow of the page and can only be called from the browser console.*
+
+![Stack Trace - New Article](new.jpg "Stack Trace - New Article")
